@@ -1,5 +1,7 @@
 package Package_1;
 
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.*;
 import java.util.Random;
 
@@ -12,39 +14,64 @@ public class Zahlenraten {
 
         Random rnd = new Random();
 
-        // die Methode Random Erstellt immer eine Zufällige Zahl von 1-10. Welche dabei auch gerade sein kann.
-        int zufallszahl = rnd.nextInt(max - min + 1) + min;
 
-        // hier wird mit dem % geprüft ob die zufällig berechnete Zahl gerade oder ungerade ist.
-        if (zufallszahl%2==0) // Wenn die Zahl gerade ist wird das unten stehente in die Konsole ausgegeben.
+        int zufallszahl = rnd.nextInt(max - min + 1) + min;                                                      // die Methode Random Erstellt immer eine Zufällige Zahl von 1-10. Welche dabei auch gerade sein kann.
+
+                                                                                                                        // hier wird mit dem % geprüft ob die zufällig berechnete Zahl gerade oder ungerade ist.
+        if (zufallszahl%2==0)                                                                                           // Wenn die Zahl gerade ist wird das unten stehente in die Konsole ausgegeben.
         {
             System.out.println("Die Zahl " +
                     "ist gerade.");
-        }else   //falls die Zahl nicht gerade ist wird das unten stehente in die Konsole ausgegeben.
+        }else                                                                                                           //falls die Zahl nicht gerade ist wird das unten stehente in die Konsole ausgegeben.
         {
             System.out.println("Die Zahl ist nicht gerade.");
         }
+        System.out.println(zufallszahl);
+                                                                                                                         //es wird vom Benutzer verlangt eine Zahl von 1-10 einzugeben
+                                                                                                                         // int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Geben Sie eine Ganzzahl von 1-10 ein."));
+        //mit den FOR Schleifenkopf() gibt man an wie oft die Schleife durchlaufen soll. In diesem Fall von 0-2 also 3 mal.
+        //in der For Schleife wird dann geprüft, ob die eingegebene Zahl mit der Zufallszahl übereinstimmt.
+        for (int i=0;i<3;++i ){
 
-         //es wird vom Benutzer verlangt eine Zahl von 1-10 einzugeben
-        int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Geben Sie eine Ganzzahl von 1-10 ein."));
+            int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Geben Sie eine Ganzzahl von 1-10 ein."));
+            if (eingabe==zufallszahl)
+            {
+                System.out.println("Glückwunsch sie haben die Zahl erraten.");
+                break;
+            }else
+            {
+                System.out.println("Leider nicht gewonnen, versuchen sie es nochmal!");
+            }
+        };
 
 
-        if (eingabe==zufallszahl) //die eingegebene Zahl wird nun mit der Zufallszahl verglichen.
-        {
-            System.out.println("Glückwunsch sie haben die gleiche Zahl wie der Zufallsgenerator getroffen. Trotzdem bekommen sie keinen Preis. Die Zahl war: " + zufallszahl);
-        }else
-        {
+            /*Dies war Aufgabe 2 - 3 welche durch 4 ersetzt wurde.
 
+            if (eingabe==zufallszahl) //die eingegebene Zahl wird nun mit der Zufallszahl verglichen.
+            {
+                System.out.println("Glückwunsch sie haben die gleiche Zahl wie der Zufallsgenerator getroffen. Trotzdem bekommen sie keinen Preis. Die Zahl war: " + zufallszahl);
+            }else
+            {
+                if (eingabe==zufallszahl)
+                {
 
+                }
+            }
 
-           if ((eingabe-zufallszahl) <= 2 && (eingabe-zufallszahl) >=-2) //Hier wird verglichen ob die Eingabe gleich groß wie die Zufahlszahl ist.
-           {
-               System.out.println("Knapp daneben ist auch vorbei, die Zahl war: " + zufallszahl);
-           }else
+            Dies war Aufgabe 3 welche durch 4 ersetzt wurde.
+
+            {
+               if ((eingabe-zufallszahl) <= 2 && (eingabe-zufallszahl) >=-2) //Hier wird verglichen ob die Eingabe gleich groß wie die Zufahlszahl ist.
                {
-                   System.out.println("Leider nicht Gewonnen°! Die Zahl war: " + zufallszahl);
-               }
-        }
+                   System.out.println("Knapp daneben ist auch vorbei, die Zahl war: " + zufallszahl);
+               }else
+                   {
+                       System.out.println("Leider nicht Gewonnen°! Die Zahl war: " + zufallszahl);
+                   }
+            }*/
+
+
+
 
 
 
