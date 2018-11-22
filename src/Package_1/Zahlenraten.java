@@ -20,21 +20,30 @@ public class Zahlenraten {
         {
             System.out.println("Die Zahl " +
                     "ist gerade.");
-        }else //falls die Zahl nicht gerade ist wird das unten stehente in die Konsole ausgegeben.
+        }else   //falls die Zahl nicht gerade ist wird das unten stehente in die Konsole ausgegeben.
         {
             System.out.println("Die Zahl ist nicht gerade.");
         }
 
-        //es wird vom Benutzer verlangt eine Zahl von 1-10 einzugeben
+         //es wird vom Benutzer verlangt eine Zahl von 1-10 einzugeben
         int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Geben Sie eine Ganzzahl von 1-10 ein."));
 
-        //die eingegebene Zahl wird nun mit der Zufallszahl verglichen.
-        if (eingabe==zufallszahl)
+
+        if (eingabe==zufallszahl) //die eingegebene Zahl wird nun mit der Zufallszahl verglichen.
         {
             System.out.println("Glückwunsch sie haben die gleiche Zahl wie der Zufallsgenerator getroffen. Trotzdem bekommen sie keinen Preis. Die Zahl war: " + zufallszahl);
         }else
         {
-            System.out.println("Leider nicht Gewonnen°! Die Zahl war: " + zufallszahl);
+
+
+
+           if ((eingabe-zufallszahl) <= 2 && (eingabe-zufallszahl) >=-2) //Hier wird verglichen ob die Eingabe gleich groß wie die Zufahlszahl ist.
+           {
+               System.out.println("Knapp daneben ist auch vorbei, die Zahl war: " + zufallszahl);
+           }else
+               {
+                   System.out.println("Leider nicht Gewonnen°! Die Zahl war: " + zufallszahl);
+               }
         }
 
 
